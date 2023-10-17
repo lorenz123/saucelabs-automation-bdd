@@ -13,8 +13,8 @@ import java.time.Duration;
 public class BrowserDriverUtil {
     public WebDriver driver;
     public WebDriverWait explicitWait;
-    public final int TIMEOUT = 10;
-    public final int Page_Load_Timeout = 20;
+    public final int TIMEOUT = 20;
+    public final int PAGE_LOAD_TIMEOUT = 10;
 
     public WebDriver getChromeDriver()
     {
@@ -24,7 +24,7 @@ public class BrowserDriverUtil {
         options.addArguments("--start-maximized");
         driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(TIMEOUT));
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(Page_Load_Timeout));
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(PAGE_LOAD_TIMEOUT));
         return driver;
     }
 
